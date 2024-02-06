@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1e1e1;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #c4b9b9;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+}
+
+.kontakt {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c5b9b9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.kontakt .column {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 300px; 
+}
+
+.kontakt h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.kontakt p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.kontakt ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.kontakt li {
+    margin-bottom: 10px;
+}
+
+.kontakt li span {
+    font-weight: bold;
+}
+
+.kontakt .form input,
+.kontakt .form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.kontakt .form textarea {
+    height: 120px;
+}
+
+.kontakt .form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.kontakt .form button:hover {
+    background-color: #666;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .usluga {
+        width: 100%;
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul.show {
+    display: block;
+}

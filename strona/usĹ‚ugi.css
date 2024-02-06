@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1e1e1;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #c4b9b9;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+}
+
+
+#uslugi {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.usluga {
+    width: 400px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.usluga:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.usluga img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.usluga h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.usluga p {
+    color: #666;
+}
+
+footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.tytul-uslugi {
+    text-align: center;
+    margin-bottom: 5px; 
+    margin-top: 80px; 
+}
+
+@media only screen and (max-width: 600px) {
+    .usluga {
+        width: 100%;
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul.show {
+    display: block;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Zakład Groomerski</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="galeria.css">
+    <body>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .login-form {
+                max-width: 400px;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .form-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+        </style>
+</head>
+<body>
+    <script>
+        function authorizeUser() {
+
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+    
+
+          document.getElementById('emailError').textContent = '';
+    
+          if (!isValidEmail(email)) {
+            document.getElementById('emailError').textContent = 'Proszę wprowadzić poprawny email.';
+            return;
+          }
+
+        }
+    
+        function isValidEmail(email) {
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+      </script>
+
+    <header>
+        <h1>Galeria</h1>
+        <nav>
+        <div class="menu-icon">&#9776;</div>
+            <ul>
+                <li><a href="strona.html">Strona główna</a></li>
+                <li><a href="usługi.html">Usługi</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="opinie.php">Opinie</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-form">
+            <h2>Zaloguj się</h2>
+            <!-- <form action="proces_logowania.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Zaloguj się</button>
+            </form> -->
+            <form id="authorizationForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error-message"></div>
+            
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            
+                <button type="button" onclick="authorizeUser()">Wyślij</button>
+              </form>
+            </div>
+              <div class="login-form">
+                <h2>stwórz konto</h2>
+                <form action="proces_logowania.php" method="POST">
+                    <input type="radio" id="logowanie" name="akcja" value="logowanie" checked>
+                    <label for="logowanie">Zaloguj się</label><br>
+                    <input type="radio" id="nowe-konto" name="akcja" value="nowe-konto">
+                    <label for="nowe-konto">Stwórz nowe konto</label><br><br>
+                    <input type="text" name="login" placeholder="Login" required>
+                    <input type="password" name="haslo" placeholder="Hasło" required>
+                    <button type="submit">Wyślij</button>
+                </form>
+            </div>
+        </div>
+        
+
+    </main>
+
+
+    <footer>
+        <p>Strona zakładu groomerskiego &copy; 2023</p>
+    </footer>
+</body>
+</html>

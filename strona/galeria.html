@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Zakład Groomerski</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="galeria.css">
+</head>
+<body>
+    <header>
+        <h1>Galeria</h1>
+        <nav>
+        <div class="menu-icon">&#9776;</div>
+            <ul>
+                <li><a href="strona.html">Strona główna</a></li>
+                <li><a href="usługi.html">Usługi</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="opinie.php">Opinie</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+
+        var menuIcon = document.querySelector('.menu-icon');
+        var menuList = document.querySelector('nav ul');
+
+        menuIcon.addEventListener('click', function() {
+            menuList.classList.toggle('show');
+        });
+    </script>
+
+    <main>
+        <div class="galeria">
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="pol.jpg" alt="Zdjęcie 1">
+                <p>Nasza stała kientka</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="kub.jpg" alt="Zdjęcie 2">
+                <p>Nasz najstarszy klient</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="al.jpg" alt="Zdjęcie 3">
+                <p>Nasz najmłodszy klient</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="m.jpg" alt="Zdjęcie 3">
+                <p>Nasz najmłodszy klient</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="ma.jpg" alt="Zdjęcie 3">
+                <p>Nasz najmłodszy klient</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="mat.jpeg" alt="Zdjęcie 3">
+                <p>Pierwszy raz na wizycie</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="matt.jpg" alt="Zdjęcie 3">
+                <p>Zdjęcie po jednej z wielu wizyt</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="matty.jpg" alt="Zdjęcie 3">
+                <p>Najbardziej lubie czesanie</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="k.jpg" alt="Zdjęcie 3">
+                <p>Nasz stały klient</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="ko.jpg" alt="Zdjęcie 3">
+                <p>Kręcą mnie smaczki po wizycie</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="koo.jpg" alt="Zdjęcie 3">
+                <p>Uwielbiam chodzić na wizyty</p>
+            </div>
+
+            <div class="zdjecie" onclick="openModal(this)">
+                <img src="mattyk.jpg" alt="Zdjęcie 3">
+                <p>Najbardziej to boje sie wody</p>
+            </div>
+            
+
+        </div>
+
+
+        
+
+        <div id="myModal" class="modal">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="modal-image" src="/" alt="">
+                <p id="modal-caption"></p>
+                <span class="modal-prev" onclick="showPrevImage()">&#10094;</span>
+                <span class="modal-next" onclick="showNextImage()">&#10095;</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Strona zakładu groomerskiego &copy; 2023</p>
+    </footer>
+
+    <script>
+        var images = document.querySelectorAll('.zdjecie');
+        var modal = document.getElementById('myModal');
+        var modalImage = document.getElementById('modal-image');
+        var modalCaption = document.getElementById('modal-caption');
+        var currentIndex = 0;
+
+        function openModal(element) {
+            currentIndex = Array.prototype.indexOf.call(images, element);
+            modalImage.src = element.querySelector('img').src;
+            modalCaption.textContent = element.querySelector('p').textContent;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateModalContent();
+        }
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateModalContent();
+        }
+
+        function updateModalContent() {
+            var currentImage = images[currentIndex];
+            modalImage.src = currentImage.querySelector('img').src;
+            modalCaption.textContent = currentImage.querySelector('p').textContent;
+        }
+    </script>
+</body>
+</html>

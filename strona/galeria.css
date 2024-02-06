@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1e1e1;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #c4b9b9;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+}
+
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.zdjecie {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.zdjecie:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.zdjecie img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.zdjecie p {
+    color: #666;
+    font-size: 14px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    display: block;
+    position: relative;
+    margin: 10% auto;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ccc;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-prev,
+.modal-next {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ccc;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.modal-prev {
+    left: 10px;
+}
+
+.modal-next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        padding: 10px;
+    }
+    
+    .zdjecie {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul.show {
+    display: block;
+}

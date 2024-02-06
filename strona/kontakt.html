@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Zakład Fryzjerski</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="kontakt.css">
+
+</head>
+<body>
+    <header>
+        <h1>Kontakt</h1>
+        <nav>
+            <div class="menu-icon">&#9776;</div>
+            <ul>
+                <li><a href="strona.html">Strona główna</a></li>
+                <li><a href="usługi.html">Usługi</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="opinie.php">Opinie</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+
+        var menuIcon = document.querySelector('.menu-icon');
+        var menuList = document.querySelector('nav ul');
+
+        menuIcon.addEventListener('click', function() {
+            menuList.classList.toggle('show');
+        });
+    </script>
+
+    <section class="kontakt">
+        <div class="column">
+            <h2>Zapraszamy do kontaktu!</h2>
+            <p>Masz pytania lub chcesz umówić wizytę? Napisz do nas!</p>
+            
+            <p><span>Godziny otwarcia:</span> Poniedziałek - Piątek: 9:00 - 18:00, Sobota: 10:00 - 16:00</p>
+            <p><span>Numer telefonu:</span> +48 123 456 789</p>
+            <p><span>Email:</span> kontakt@zakladfryzjerski.pl</p>
+            <p><span>Zapraszamy do podzielenia się swoją opinią:</span></p>
+        </div>
+        <div class="column">
+            <div class="form">
+                <form action="odbierz_dane.php" method="POST">
+                    <input type="text" name="imie" placeholder="Imię" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="wiadomosc" placeholder="Wiadomość" required></textarea>
+                    <button type="submit">Wyślij</button>
+                </form>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.3477093218475!2d19.93493401590002!3d49.29768076812046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4717e9f0e6d2b675%3A0x6e3d9c62d68fe8d3!2sKrup%C3%B3wki%2034%2C%2034-500%20Zakopane!5e0!3m2!1sen!2spl" style="width: 100%; height: 400px; border: 0;" allowfullscreen></iframe>
+
+        </div>
+        
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2023 Zakład Fryzjerski. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
